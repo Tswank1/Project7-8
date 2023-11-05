@@ -24,67 +24,6 @@ int main(int argc, char const *argv[]){
         return -1;
     }
 
-    if(vmFile.find("Sys.vm") != -1){
-        asmOut << "\t@256\n"
-               << "\tD=A\n"
-               << "\t@SP\n"
-               << "\tM=D\n"
-               << "\t@RETURN\n"
-               << "\tD=A\n"
-               << "\t@SP\n"
-               << "\tA=M\n"
-               << "\tM=D\n"
-               << "\t@SP\n"
-               << "\tM=M+1\n"
-
-               << "\t@LCL\n"
-               << "\tD=M\n"
-               << "\t@SP\n"
-               << "\tA=M\n"
-               << "\tM=D\n"
-               << "\t@SP\n"
-               << "\tM=M+1\n"
-
-               << "\t@ARG\n"
-               << "\tD=M\n"
-               << "\t@SP\n"
-               << "\tA=M\n"
-               << "\tM=D\n"
-               << "\t@SP\n"
-               << "\tM=M+1\n"
-
-               << "\t@THIS\n"
-               << "\tD=M\n"
-               << "\t@SP\n"
-               << "\tA=M\n"
-               << "\tM=D\n"
-               << "\t@SP\n"
-               << "\tM=M+1\n"
-
-               << "\t@THAT\n"
-               << "\tD=M\n"
-               << "\t@SP\n"
-               << "\tA=M\n"
-               << "\tM=D\n"
-               << "\t@SP\n"
-               << "\tM=M+1\n"
-
-               << "\t@SP\n"
-               << "\tD=M\n"
-               << "\t@5\n"
-               << "\tD=D-A\n"
-               << "\t@0\n"
-               << "\tD=D-A\n"
-               << "\t@ARG\n"
-               << "\tM=D\n"
-               << "\t@SP\n"
-               << "\tD=M\n"
-               << "\t@LCL\n"
-               << "\tM=D\n"
-               << "\t@Sys.init\n"
-               << "\t0;JMP\n"
-               << "(RETURN)" << endl;
-    }
     cout << "Outputing to asm file" << endl;
     string input;
     while(getline(VM, input)){
